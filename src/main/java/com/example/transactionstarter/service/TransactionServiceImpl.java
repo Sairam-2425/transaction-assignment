@@ -122,5 +122,21 @@ public class TransactionServiceImpl implements TransactionService {
         transactionRepository.delete(transaction);
     }
     
+    
+    @Override
+    public List<Transaction> getAllTransactions() {
+
+        return transactionRepository.findAll();
+    }
+    
+    @Override
+    public List<String> getAllCustomers() {
+
+        return transactionRepository.findAll()
+                .stream()
+                .map(Transaction::getCustomerId)
+                .distinct()
+                .toList();
+    }
 
 }

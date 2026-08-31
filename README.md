@@ -62,19 +62,29 @@ The project is a Spring Boot REST API designed to manage customer transactions. 
 
 The application uses Validation to validate incoming requests. Required fields such as transaction ID, customer ID, amount, currency, and transaction type must be provided. Invalid or missing values are rejected. Duplicate transaction IDs are not allowed, and invalid status transitions are prevented.
 
+
 API Endpoints
+---
 
-| Method | Endpoint | Description |
 
-|--------|----------|-------------|
 
-| POST | `/api/transactions` | Create a transaction |
+Method	Endpoint	                                   Description
 
-| GET | `/api/transactions/{transactionId}` | Get transaction by ID |
+POST	/api/transactions	                          Create a transaction
 
-| PATCH | `/api/transactions/{transactionId}/status` | Update transaction status |
+GET	/api/transactions	                          Get all transactions
 
-| GET | `/api/customers/{customerId}/transactions` | Get customer transactions |
+GET	/api/transactions/{transactionId}	          Get transaction by ID
+
+PATCH	/api/transactions/{transactionId}/status	  Update transaction status
+
+DELETE	/api/transactions/{transactionId}	          Delete a transaction
+
+GET	/api/customers/{customerId}/transactions	  Get customer transactions
+
+GET	/api/customers	Get all customers
+
+
 
 #### Testing Approach
 
@@ -89,8 +99,4 @@ The application currently uses an H2 in-memory database, so data is lost when th
 #### Improvements With More Time
 
 I would add MySQL for persistent storage, authentication and role-based authorization, standardized error responses, pagination and filtering.
-
-
-
-
 

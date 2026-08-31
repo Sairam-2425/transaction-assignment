@@ -35,6 +35,7 @@ class TransactionStarterApplicationTests {
         transactionRepository.deleteAll();
     }
 
+    
     @Test
     void shouldCreateTransaction() throws Exception {
 

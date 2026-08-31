@@ -103,6 +103,24 @@ public class TransactionController {
         return ResponseEntity .status(HttpStatus.OK) .body("Transaction successfully deleted: " + transactionId);
         		
     }
+    
+    @GetMapping("/transactions")
+    public ResponseEntity<List<Transaction>> getAllTransactions() {
+
+        List<Transaction> transactions =
+                transactionService.getAllTransactions();
+
+        return ResponseEntity.ok(transactions);
+    }
+    
+    @GetMapping("/customers")
+    public ResponseEntity<List<String>> getAllCustomers() {
+
+        List<String> customers =
+                transactionService.getAllCustomers();
+
+        return ResponseEntity.ok(customers);
+    }
 
  // VALIDATION ERRORS
     @ExceptionHandler(MethodArgumentNotValidException.class)

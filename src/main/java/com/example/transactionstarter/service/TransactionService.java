@@ -21,5 +21,9 @@ public interface TransactionService {
             String customerId);
 
     void deleteTransaction(String transactionId);
+    
+    List<Transaction> getAllTransactions();
+
+    List<String> getAllCustomers();
 }
 
